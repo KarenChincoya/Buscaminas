@@ -23,7 +23,7 @@ import javax.swing.JPanel;
 public class TableroPanel extends JPanel{
 //    private JLabel mensaje;
     private TableroListener listener;
-    TButton boton;
+    TTextField boton;
     public TableroPanel(Integer x, Integer y){
         super();
     //    super.setBackground(Color.BLUE);
@@ -38,7 +38,7 @@ public class TableroPanel extends JPanel{
         for(int i=0;i< buscaminas.getX();i++){
             for(int j = 0; j<buscaminas.getY(); j++){
                 Cell celda = buscaminas.getGrid()[i][j];
-                boton = new TButton(celda, j, j);
+                boton = new TTextField(celda, j, j);
                 if(celda.getStatus() == REVEALED){ 
                         JLabel abierto = new JLabel();
                         if(celda.getNumber()!=0){
@@ -48,7 +48,7 @@ public class TableroPanel extends JPanel{
                         abierto.setBounds(i*35+10, j*35+10, 30, 30);
                         super.add(abierto);
                 }else{
-                    TButton cerrado = new TButton(celda, i, j); 
+                    TTextField cerrado = new TTextField(celda, i, j); 
                     cerrado.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {

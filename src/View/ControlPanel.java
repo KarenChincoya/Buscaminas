@@ -22,7 +22,7 @@ import javax.swing.SwingConstants;
  */
 
 public class ControlPanel extends JPanel implements ActionListener{
-    private TButton btnJuego;
+    private TTextField btnJuego;
     private JTextField txtMinas;
     private JTextField txtTiempo;
     
@@ -33,7 +33,7 @@ public class ControlPanel extends JPanel implements ActionListener{
         super.setLayout(new BorderLayout());
         super.setBackground(Color.RED);
         
-       btnJuego = new TButton("/Images/sFace1.png"); //de titulo nada
+       btnJuego = new TTextField("/Images/sFace1.png"); //de titulo nada
        
        btnJuego.addActionListener(new ActionListener() {
             @Override
